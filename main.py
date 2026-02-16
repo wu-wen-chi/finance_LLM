@@ -17,4 +17,4 @@ def placeholder_for_member_b(ticker: str) -> str:
 
 if __name__ == "__main__":
     # 使用 sse 模式啟動
-    mcp.run(transport="sse")
+    mcp.run(transport="sse", host="0.0.0.0", port=8000)

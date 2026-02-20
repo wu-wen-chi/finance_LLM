@@ -1,4 +1,5 @@
 from fastmcp import FastMCP
+import os
 
 # 初始化 MCP 伺服器
 mcp = FastMCP("Stock_Strategy_Agent")
@@ -16,5 +17,6 @@ def placeholder_for_member_b(ticker: str) -> str:
     return f"正在準備 {ticker} 的數據分析..."
 
 if __name__ == "__main__":
+    port = int(os.getenv("PORT", 8000))
     # 使用 sse 模式啟動
-    mcp.run(transport="sse", host="0.0.0.0", port=8000)
+    mcp.run(transport="sse", host="0.0.0.0", port=port)
